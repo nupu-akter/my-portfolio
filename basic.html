@@ -1,2 +1,171 @@
-<doctype=HTML>
-<head> Hi it is an just an temporary Portfolio </head>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+    <style>
+        /* Reset some default styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+        }
+
+        header {
+            background: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            margin: 0 15px;
+        }
+
+        nav ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+
+        section {
+            padding: 20px 0;
+        }
+
+        #about {
+            background: #f4f4f4;
+        }
+
+        #projects .project {
+            border: 1px solid #ddd;
+            padding: 15px;
+            margin-bottom: 15px;
+            border-radius: 5px;
+            background: #fff;
+        }
+
+        #contact form {
+            display: flex;
+            flex-direction: column;
+        }
+
+        #contact form input,
+        #contact form textarea {
+            padding: 10px;
+            margin-bottom: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+        }
+
+        #contact form button {
+            padding: 10px;
+            border: none;
+            background: #333;
+            color: #fff;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        footer {
+            background: #333;
+            color: #fff;
+            text-align: center;
+            padding: 10px 0;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            nav ul {
+                flex-direction: column;
+            }
+
+            .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Section -->
+    <header>
+        <h1>My Portfolio</h1>
+        <nav>
+            <ul>
+                <li><a href="#about">About Me</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- About Me Section -->
+    <section id="about" class="container">
+        <h2>About Me</h2>
+        <p>Hello! I'm [Your Name], a [Your Profession] based in [Your Location]. I specialize in [Your Specializations]. With [X] years of experience, I have worked on various projects that have honed my skills in [Relevant Skills].</p>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+        <h2>Projects</h2>
+
+        <div class="project">
+            <h3>Project One</h3>
+            <p>Description of your first project. Explain what it is, the technologies used, and your role in it.</p>
+            <a href="#">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>Project Two</h3>
+            <p>Description of your second project. Highlight any challenges you overcame and the outcome.</p>
+            <a href="#">View Project</a>
+        </div>
+
+        <!-- Add more projects as needed -->
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="container">
+        <h2>Contact Me</h2>
+        <form action="#" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            
+            <input type="email" name="email" placeholder="Your Email" required>
+            
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+    </footer>
+
+</body>
+</html>
