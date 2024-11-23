@@ -3,108 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
+    <title>Nupur Akter | Full Stack WordPress Developer & Next.js Specialist</title>
     <style>
         /* Reset some default styles */
-        * {
+        *, *::before, *::after {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
+        /* Base Styles */
         body {
-            font-family: Arial, sans-serif;
+            font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
             line-height: 1.6;
             color: #333;
+            background-color: #ffffff;
+            scroll-behavior: smooth;
         }
 
+        a {
+            color: #3498db;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #2980b9;
+        }
+
+        /* Container */
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 0;
+        }
+
+        /* Header */
         header {
-            background: #333;
-            color: #fff;
+            background: #ffffff;
             padding: 20px 0;
-            text-align: center;
+            border-bottom: 1px solid #eaeaea;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header h1 {
+            font-size: 1.5em;
+            color: #333;
         }
 
         nav ul {
             list-style: none;
             display: flex;
-            justify-content: center;
-        }
-
-        nav ul li {
-            margin: 0 15px;
+            gap: 20px;
         }
 
         nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            font-weight: bold;
+            font-size: 1em;
+            color: #333;
+            font-weight: 500;
         }
 
-        .container {
-            width: 80%;
-            margin: auto;
-            overflow: hidden;
-            padding: 20px 0;
+        /* Hero Section */
+        #hero {
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding-top: 80px; /* To offset fixed header */
         }
 
-        section {
-            padding: 20px 0;
+        #hero h2 {
+            font-size: 2.5em;
+            margin-bottom: 20px;
+            color: #333;
         }
 
+        #hero p {
+            font-size: 1.2em;
+            max-width: 600px;
+            margin-bottom: 30px;
+            color: #555;
+        }
+
+        #hero a {
+            padding: 10px 20px;
+            border: 2px solid #3498db;
+            border-radius: 25px;
+            transition: background 0.3s ease, color 0.3s ease;
+        }
+
+        #hero a:hover {
+            background: #3498db;
+            color: #ffffff;
+        }
+
+        /* About Section */
         #about {
-            background: #f4f4f4;
+            padding: 80px 0;
+            text-align: center;
         }
 
-        #projects .project {
-            border: 1px solid #ddd;
-            padding: 15px;
-            margin-bottom: 15px;
-            border-radius: 5px;
-            background: #fff;
+        #about img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 20px;
+            border: 3px solid #3498db;
+        }
+
+        #about h2 {
+            font-size: 2em;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        #about p {
+            font-size: 1em;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #555;
+        }
+
+        /* Skills Section */
+        #skills {
+            background: #f9f9f9;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        #skills h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .skill {
+            background: #e0e0e0;
+            color: #333;
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        /* Projects Section */
+        #projects {
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        #projects h2 {
+            font-size: 2em;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .project {
+            max-width: 800px;
+            margin: 0 auto 40px auto;
+            text-align: left;
+            border-bottom: 1px solid #eaeaea;
+            padding-bottom: 20px;
+        }
+
+        .project h3 {
+            font-size: 1.5em;
+            margin-bottom: 10px;
+            color: #3498db;
+        }
+
+        .project p {
+            font-size: 1em;
+            margin-bottom: 10px;
+            color: #555;
+        }
+
+        .project a {
+            font-size: 0.9em;
+            color: #3498db;
+            border-bottom: 1px solid transparent;
+            transition: border-bottom 0.3s ease;
+        }
+
+        .project a:hover {
+            border-bottom: 1px solid #3498db;
+        }
+
+        /* Contact Section */
+        #contact {
+            background: #f9f9f9;
+            padding: 80px 0;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-size: 2em;
+            margin-bottom: 30px;
+            color: #333;
         }
 
         #contact form {
+            max-width: 600px;
+            margin: 0 auto;
             display: flex;
             flex-direction: column;
+            gap: 15px;
         }
 
         #contact form input,
         #contact form textarea {
-            padding: 10px;
-            margin-bottom: 10px;
+            padding: 15px;
             border: 1px solid #ccc;
-            border-radius: 4px;
+            border-radius: 5px;
+            font-size: 1em;
             width: 100%;
+            transition: border 0.3s ease;
+        }
+
+        #contact form input:focus,
+        #contact form textarea:focus {
+            border-color: #3498db;
+            outline: none;
         }
 
         #contact form button {
-            padding: 10px;
+            padding: 15px;
             border: none;
-            background: #333;
-            color: #fff;
-            border-radius: 4px;
+            background: #3498db;
+            color: #ffffff;
+            font-size: 1em;
+            border-radius: 5px;
             cursor: pointer;
+            transition: background 0.3s ease;
         }
 
+        #contact form button:hover {
+            background: #2980b9;
+        }
+
+        /* Footer */
         footer {
-            background: #333;
-            color: #fff;
+            padding: 20px 0;
             text-align: center;
-            padding: 10px 0;
-            position: fixed;
-            width: 100%;
-            bottom: 0;
+            border-top: 1px solid #eaeaea;
+            color: #777;
+        }
+
+        footer a {
+            color: #777;
+            margin: 0 10px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: #3498db;
         }
 
         /* Responsive Styles */
         @media (max-width: 768px) {
-            nav ul {
+            header .container {
                 flex-direction: column;
+                gap: 10px;
             }
 
-            .container {
-                width: 95%;
+            nav ul {
+                flex-direction: column;
+                gap: 10px;
+            }
+
+            .skills-container {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .project {
+                padding: 0;
             }
         }
     </style>
@@ -113,20 +305,49 @@
 
     <!-- Header Section -->
     <header>
-        <h1>My Portfolio</h1>
-        <nav>
-            <ul>
-                <li><a href="#about">About Me</a></li>
-                <li><a href="#projects">Projects</a></li>
-                <li><a href="#contact">Contact</a></li>
-            </ul>
-        </nav>
+        <div class="container">
+            <h1>Nupur Akter</h1>
+            <nav>
+                <ul>
+                    <li><a href="#hero">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
     </header>
+
+    <!-- Hero Section -->
+    <section id="hero">
+        <h2>Welcome to My Portfolio</h2>
+        <p>I'm Nupur Akter, a Full Stack WordPress Developer and Next.js Specialist dedicated to building responsive and dynamic websites.</p>
+        <a href="#projects">View My Work</a>
+    </section>
 
     <!-- About Me Section -->
     <section id="about" class="container">
+        <img src="images/nupur-photo.jpg" alt="Nupur Akter">
         <h2>About Me</h2>
-        <p>Hello! I'm [Your Name], a [Your Profession] based in [Your Location]. I specialize in [Your Specializations]. With [X] years of experience, I have worked on various projects that have honed my skills in [Relevant Skills].</p>
+        <p>Hello! I'm <strong>Nupur Akter</strong>, a passionate Full Stack WordPress Developer based in [Your Location]. With over [X] years of experience, I specialize in creating dynamic and responsive websites using WordPress and Next.js. My expertise lies in developing custom themes, plugins, and integrating modern JavaScript frameworks to enhance website performance and user experience.</p>
+    </section>
+
+    <!-- Skills Section -->
+    <section id="skills" class="container">
+        <h2>Skills</h2>
+        <div class="skills-container">
+            <div class="skill">WordPress Development</div>
+            <div class="skill">Next.js</div>
+            <div class="skill">JavaScript</div>
+            <div class="skill">PHP</div>
+            <div class="skill">HTML5 & CSS3</div>
+            <div class="skill">Responsive Design</div>
+            <div class="skill">REST APIs</div>
+            <div class="skill">Git & GitHub</div>
+            <div class="skill">SEO Optimization</div>
+            <div class="skill">MySQL</div>
+        </div>
     </section>
 
     <!-- Projects Section -->
@@ -134,15 +355,21 @@
         <h2>Projects</h2>
 
         <div class="project">
-            <h3>Project One</h3>
-            <p>Description of your first project. Explain what it is, the technologies used, and your role in it.</p>
-            <a href="#">View Project</a>
+            <h3>Custom WordPress Theme for Creative Agency</h3>
+            <p>Developed a fully responsive and SEO-friendly WordPress theme tailored to the creative agency's specifications. Integrated custom post types, advanced custom fields, and optimized the theme for speed and performance.</p>
+            <a href="https://creativeagency.com" target="_blank">View Project</a>
         </div>
 
         <div class="project">
-            <h3>Project Two</h3>
-            <p>Description of your second project. Highlight any challenges you overcame and the outcome.</p>
-            <a href="#">View Project</a>
+            <h3>Next.js E-commerce Platform</h3>
+            <p>Built a scalable e-commerce platform using Next.js, enabling server-side rendering for improved performance and SEO. Integrated with WooCommerce API for seamless product management and order processing.</p>
+            <a href="https://ecommerceplatform.com" target="_blank">View Project</a>
+        </div>
+
+        <div class="project">
+            <h3>WordPress Plugin: Advanced SEO Manager</h3>
+            <p>Created a custom WordPress plugin to enhance SEO capabilities, providing users with advanced tools for keyword optimization, meta tag management, and performance analytics.</p>
+            <a href="https://wordpress.org/plugins/advanced-seo-manager" target="_blank">View Project</a>
         </div>
 
         <!-- Add more projects as needed -->
@@ -151,7 +378,7 @@
     <!-- Contact Section -->
     <section id="contact" class="container">
         <h2>Contact Me</h2>
-        <form action="#" method="post">
+        <form action="https://formspree.io/f/your-form-id" method="POST">
             <input type="text" name="name" placeholder="Your Name" required>
             
             <input type="email" name="email" placeholder="Your Email" required>
@@ -164,7 +391,14 @@
 
     <!-- Footer -->
     <footer>
-        <p>&copy; 2024 [Your Name]. All rights reserved.</p>
+        <p>&copy; 2024 Nupur Akter. All rights reserved.</p>
+        <p>
+            <a href="https://github.com/nupurakter" target="_blank">GitHub</a>
+            |
+            <a href="https://linkedin.com/in/nupurakter" target="_blank">LinkedIn</a>
+            |
+            <a href="mailto:nupur@example.com">Email</a>
+        </p>
     </footer>
 
 </body>
